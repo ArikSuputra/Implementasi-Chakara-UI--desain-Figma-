@@ -1,0 +1,90 @@
+// // src/components/CallWork.tsx
+// "use client";
+// import { Flex, useBreakpointValue } from "@chakra-ui/react";
+// import Image from "next/image";
+// import { useGalleryImages } from "../components/gallery";
+
+// function splitArray(inputArray: string[], columnSize: number): string[][] {
+// 	const chunkSize = Math.ceil(inputArray.length / columnSize);
+// 	const result: string[][] = [];
+
+// 	for (let i = 0; i < inputArray.length; i += chunkSize) {
+// 		result.push(inputArray.slice(i, i + chunkSize));
+// 	}
+
+// 	return result;
+// }
+
+// export default function CallWork() {
+// 	// Using the hook to fetch images from the 'gallery' directory
+// 	const filenames = useGalleryImages("gallery");
+
+// 	const columnSize = useBreakpointValue({
+// 		base: 1,
+// 		md: 2,
+// 		lg: 3,
+// 	}) || 1;
+
+// 	const imageList = splitArray(filenames, columnSize);
+
+// 	return (
+// 		<Flex direction="row">
+// 			{imageList.map((column, colIndex) => (
+// 				<Flex direction="column" w="100%" key={colIndex}>
+// 					{column.map((filename, idx) => (
+// 						<Image
+// 							src={`/images/gallery/${filename}`} // Constructing image path dynamically
+// 							key={filename}
+// 							alt={`Gallery Image ${idx + 1}`}
+// 							style={{ width: "100%", height: "fit-content", padding: "12px" }}
+// 							height={1400}
+// 							width={1400}
+// 						/>
+// 					))}
+// 				</Flex>
+// 			))}
+// 		</Flex>
+// 	);
+// }
+
+"use client";
+import { Flex, useBreakpointValue } from "@chakra-ui/react";
+import Image from "next/image";
+import { useGalleryImages } from "../components/gallery";
+
+function splitArray(inputArray: string[], columnSize: number): string[][] {
+  const chunkSize = Math.ceil(inputArray.length / columnSize);
+  const result: string[][] = [];
+
+  for (let i = 0; i < inputArray.length; i += chunkSize) {
+    result.push(inputArray.slice(i, i + chunkSize));
+  }
+
+  return result;
+}
+
+export default function CallWork() {
+  const filenames = useGalleryImages("gallery"); // Hardcoded to fetch from 'gallery'
+
+  const columnSize = useBreakpointValue({ base: 1, md: 2, lg: 3 }) || 1;
+  const imageList = splitArray(filenames, columnSize);
+
+  return (
+    <Flex direction="row">
+      {imageList.map((column, colIndex) => (
+        <Flex direction="column" w="100%" key={colIndex}>
+          {column.map((filename, idx) => (
+            <Image
+              src={`/images/gallery/${filename}`}
+              key={filename}
+              alt={`Gallery Image ${idx + 1}`}
+              style={{ width: "100%", height: "fit-content", padding: "12px" }}
+              height={1400}
+              width={1400}
+            />
+          ))}
+        </Flex>
+      ))}
+    </Flex>
+  );
+}

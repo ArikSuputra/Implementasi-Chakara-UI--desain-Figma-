@@ -86,46 +86,67 @@
 // export default Work;
 
 // src/app/work/page.tsx
-import { Flex } from "@chakra-ui/react";
-import { getImages } from "../api/images/route";
-import ImageColumn from "../components/ImageColumn";
 
-// Server component
-export default async function Work() {
-  const directories = ['gallery']; // Specify which directories you want to fetch images from
-  const allFilenames = await getImages(directories);
+// import { Flex , useMediaQuery } from "@chakra-ui/react";
+// import { getImages } from "../api/images/route";
+// import DekstopContent from "../components/dekstop/WorkD";
+// import MobileContent from "../components/mobile/WorkM";
+// import Call from "../components/CallWork"
+// import ImageColumn from "../components/ImageColumn";
 
-  // Assuming you're only working with the 'gallery' directory:
-  const filenames = allFilenames['gallery'] || [];
+// // Server component
+// export default async function Work() {
+//   const directories = ['gallery']; // Specify which directories you want to fetch images from
+//   const allFilenames = await getImages(directories);
 
-  const columnCount = [1, 2, 3];
-  const columns: string[][] = Array.from(
-    { length: columnCount[columnCount.length - 1] },
-    () => [] as string[]
-  );
+//   // Assuming you're only working with the 'gallery' directory:
+//   const filenames = allFilenames['gallery'] || [];
 
-  filenames.forEach((filename, index) => {
-    columns[index % columnCount[columnCount.length - 1]].push(filename);
-  });
+//   const columnCount = 3 ;
+//   const columns: string[][] = Array.from(
+//     { length: columnCount },
+//     () => [] as string[]
+//   );
 
-  return (
-    <Flex direction={['column', 'row']} wrap="wrap" justify="center">
-      <Flex
-        flex="1"
-        p={5}
-        maxW="2000px"
-        mx="auto"
-        position="relative"
-        zIndex="2"
-        direction={['column', 'row']}
-        gap="10px"
-        justify="center"
-        wrap="wrap"
-      >
-        {columns.map((column, columnIndex) => (
-          <ImageColumn key={columnIndex} column={column} columnIndex={columnIndex} />
-        ))}
-      </Flex>
+//   filenames.forEach((filename, index) => {
+//     columns[index % columnCount].push(filename);
+//   });
+
+//   // const [isMobile] = useMediaQuery("(max-width : 786px)");
+//   return (
+
+//   //   <Flex direction={['column', 'row']} wrap="wrap" justify="center">
+//   //     <Call columns={columns}  filenames={filenames}/></Flex>
+//   <Flex direction={['column', 'row']} wrap="wrap" justify="center">
+//   <Flex
+//     flex="1"
+//     p={5}
+//     maxW="auto"
+//     mx="auto"
+//     position="relative"
+//     zIndex="2"
+//     direction={['column', 'row']}
+//     gap="10px"
+//     justify="center"
+//     wrap="wrap"
+//   >
+//     {columns.map((column, columnIndex) => (
+//       <ImageColumn key={columnIndex} column={column} columnIndex={columnIndex} />
+//     ))}
+//   </Flex>
+// </Flex>
+//   );
+// }
+
+import { Flex} from "@chakra-ui/react";
+import CallWork from "./callwork1"
+
+const work =() =>{
+  return(
+    <Flex>
+      <CallWork/>
     </Flex>
   );
-}
+};
+
+export default work;
