@@ -24,6 +24,7 @@ return (
     bottom="0"
     left="0"
     width="100%"
+    height="95px"
     zIndex="3">
       <Flex mt={{ base: 4, md: 0 }} gap={4}>
         {routes.map((route) =>(
@@ -32,7 +33,7 @@ return (
             key={route.name}
             width="100%"
             padding="12px"
-            bg={currentPath === route.path ? "brown" : "none"}
+            bg={currentPath === route.path ? "#562400" : "none"}
             display="Flex"
             justifyContent="center"
             alignItems="center"
@@ -40,8 +41,8 @@ return (
              <Image
              src = {route.imgSrc}
              alt = {`${route.name} Icon`}
-             height={30}
-             width={30}
+             height="fit-content"
+             width="fit-content"
              />
              </ChakraLink>
         ))} 

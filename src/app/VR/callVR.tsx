@@ -1,7 +1,13 @@
 "use client";
 import Image from "next/image";
+import { DM_Serif_Display } from '@next/font/google';
 import { Box, SimpleGrid, Text, Flex } from "@chakra-ui/react";
 import { useGalleryImages } from "../components/gallery";
+
+const dmSerifDisplay = DM_Serif_Display({
+  weight: '400', // Specify the weight you want (e.g., 400 for regular)
+  subsets: ['latin'], // Optional subsets
+});
 
 export default function VR() {
   const filenames = useGalleryImages("VR");
@@ -38,6 +44,8 @@ export default function VR() {
                   p="3px 8px"
                   borderRadius="5px"
                   fontSize="sm"
+                  color="#562400"
+                  fontFamily={dmSerifDisplay.style.fontFamily}
                 >
                   Lorem Ipsum
                 </Text>
@@ -49,3 +57,4 @@ export default function VR() {
     </Flex>
   );
 }
+ 

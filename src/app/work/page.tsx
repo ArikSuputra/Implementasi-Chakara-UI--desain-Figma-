@@ -138,12 +138,12 @@
 //   );
 // }
 
-import { Flex} from "@chakra-ui/react";
+import { Flex , useBreakpointValue} from "@chakra-ui/react";
 import CallWork from "./callwork1"
 
 const work =() =>{
   return(
-    <Flex>
+    <Flex pb= {{base:"100px" , md: "0px" , lg: "0px" }}>
       <CallWork/>
     </Flex>
   );

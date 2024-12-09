@@ -106,7 +106,18 @@
 import { Box, Center, Flex, Link, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { usePathname } from 'next/navigation';
+import { DM_Serif_Display , Quicksand } from '@next/font/google';
 import React from "react";
+
+const dmSerifDisplay = DM_Serif_Display({
+    weight: '400', 
+    subsets: ['latin'],
+});
+
+const quicksand = Quicksand({
+    weight: '400', 
+    subsets: ['latin'],
+});
 
 const Sidebar = () => {
     const pathname = usePathname(); // Get the current pathname
@@ -128,7 +139,7 @@ const Sidebar = () => {
         >
             <Box>
                 <Center mb={10} pt={20}> {/* Responsive top padding */}
-                    <Text color="brown" fontSize="2xl" fontWeight="bold">Kapi Nala</Text>
+                    <Text color="#562400" fontSize="2xl" fontWeight="bold" fontFamily={dmSerifDisplay.style.fontFamily} >Kapi Nala</Text>
                 </Center>
 
                 {/* Menu Items */}
@@ -142,9 +153,10 @@ const Sidebar = () => {
                     <Center mb={8} key={item.path}>
                         <NextLink href={item.path} passHref legacyBehavior>
                             <Link
-                                color={pathname === item.path || (item.path.startsWith('/work') && pathname.startsWith('/work')) ? "brown" : "gray"}
+                                color={pathname === item.path || (item.path.startsWith('/work') && pathname.startsWith('/work')) ? "#562400" : "gray"}
                                 fontSize={"lg"} // Responsive font size
                                 fontWeight="medium"
+                                fontFamily={dmSerifDisplay.style.fontFamily}
                             >
                                 {item.label}
                             </Link>
@@ -155,13 +167,13 @@ const Sidebar = () => {
 
             {/* Sidebar Footer */}
             <Box mt="auto" pt={4} borderTop="1px solid gray">
-                <Text fontSize="sm" textAlign="center" color="black">
+                <Text fontSize="sm" textAlign="center" color="black" fontFamily={quicksand.style.fontFamily}>
                     &copy; {new Date().getFullYear()} My Website. All rights reserved.
                 </Text>
-                <Text fontSize="sm" textAlign="center" color="black">
+                <Text fontSize="sm" textAlign="center" color="black" fontFamily={quicksand.style.fontFamily}>
                     Design By Kotak
                 </Text>
-                <Text fontSize="sm" textAlign="center" color="black">
+                <Text fontSize="sm" textAlign="center" color="black" fontFamily={quicksand.style.fontFamily}>
                     www.devkoma.com
                 </Text>
             </Box>

@@ -42,7 +42,7 @@ import CallVR from "./callVR"
 
 const VR =() =>{
   return(
-    <Flex>
+    <Flex pb= {{base:"100px" , md: "0px" , lg: "0px" }}>
       <CallVR/>
     </Flex>
   );

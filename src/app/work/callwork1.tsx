@@ -48,9 +48,15 @@
 // }
 
 "use client";
-import { Flex, useBreakpointValue } from "@chakra-ui/react";
+import { Flex, useBreakpointValue, Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { useGalleryImages } from "../components/gallery";
+import { DM_Serif_Display } from '@next/font/google';
+
+const dmSerifDisplay = DM_Serif_Display({
+  weight: '400', 
+  subsets: ['latin'],
+});
 
 function splitArray(inputArray: string[], columnSize: number): string[][] {
   const chunkSize = Math.ceil(inputArray.length / columnSize);
@@ -70,18 +76,35 @@ export default function CallWork() {
   const imageList = splitArray(filenames, columnSize);
 
   return (
-    <Flex direction="row">
+    <Flex direction="row" gap={4}>
       {imageList.map((column, colIndex) => (
-        <Flex direction="column" w="100%" key={colIndex}>
+        <Flex direction="column" w="100%" key={colIndex} gap={4}>
           {column.map((filename, idx) => (
-            <Image
-              src={`/images/gallery/${filename}`}
-              key={filename}
-              alt={`Gallery Image ${idx + 1}`}
-              style={{ width: "100%", height: "fit-content", padding: "12px" }}
-              height={1400}
-              width={1400}
-            />
+            <Box key={filename} position="relative">
+
+              {/* Image */}
+              <Image
+                src={`/images/gallery/${filename}`}
+                alt={`Gallery Image ${idx + 1}`}
+                style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+                height={1400}
+                width={1400}
+              />
+
+              {/* Label */}
+              <Box
+                position="absolute"
+                top="10px"
+                left="10px"
+                bg="rgba(255, 255, 255, 0.8)"
+                p="3px 8px"
+                borderRadius="5px"
+              >
+                <Text fontSize="sm" color="#562400" fontFamily={dmSerifDisplay.style.fontFamily}>
+                  Lorem ipsum
+                </Text>
+              </Box>
+            </Box>
           ))}
         </Flex>
       ))}
