@@ -25,6 +25,16 @@ return (
     left="0"
     width="100%"
     height="95px"
+    _before={{
+      content: '""',
+      position: "absolute",
+      top: 0,
+      left: -38,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(225, 213, 206, 0.70)", // Increase opacity here
+      zIndex: 0, // Layer below text but above image
+  }}
     zIndex="3">
       <Flex mt={{ base: 4, md: 0 }} gap={4}>
         {routes.map((route) =>(
@@ -37,12 +47,14 @@ return (
             display="Flex"
             justifyContent="center"
             alignItems="center"
+            zIndex="3"
             >
              <Image
              src = {route.imgSrc}
              alt = {`${route.name} Icon`}
              height="fit-content"
              width="fit-content"
+             zIndex="3"
              />
              </ChakraLink>
         ))} 

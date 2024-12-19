@@ -135,13 +135,22 @@ const Sidebar = () => {
             backgroundImage="url('/images/Image(bg).png')"
             backgroundSize="cover"
             backgroundPosition="center"
-            filter="saturate(65%) brightness(90%) blur(60%)"
+            _before={{
+                content: '""',
+                position: "absolute",
+                top: 0,
+                left: -38,
+                right: 0,
+                bottom: 0,
+                backgroundColor: "rgba(225, 213, 206, 0.70)", // Increase opacity here
+                zIndex: 0, // Layer below text but above image
+            }}
+            zIndex={1}
         >
             <Box>
                 <Center mb={10} pt={20}> {/* Responsive top padding */}
-                    <Text color="#562400" fontSize="2xl" fontWeight="bold" fontFamily={dmSerifDisplay.style.fontFamily} >Kapi Nala</Text>
+                    <Text color="#562400" zIndex={1} fontSize="56px" fontWeight="bold" fontFamily={dmSerifDisplay.style.fontFamily} >Kapi Nala</Text>
                 </Center>
-
                 {/* Menu Items */}
                 {[
                     { label: 'Home', path: '/' },
@@ -154,9 +163,10 @@ const Sidebar = () => {
                         <NextLink href={item.path} passHref legacyBehavior>
                             <Link
                                 color={pathname === item.path || (item.path.startsWith('/work') && pathname.startsWith('/work')) ? "#562400" : "gray"}
-                                fontSize={"lg"} // Responsive font size
+                                fontSize={"40px"} // Responsive font size
                                 fontWeight="medium"
                                 fontFamily={dmSerifDisplay.style.fontFamily}
+                                zIndex={1}
                             >
                                 {item.label}
                             </Link>
@@ -166,14 +176,14 @@ const Sidebar = () => {
             </Box>
 
             {/* Sidebar Footer */}
-            <Box mt="auto" pt={4} borderTop="1px solid gray">
-                <Text fontSize="sm" textAlign="center" color="black" fontFamily={quicksand.style.fontFamily}>
-                    &copy; {new Date().getFullYear()} My Website. All rights reserved.
+            <Box mt="auto" pt={4} borderTop="1px solid gray" zIndex={1}>
+                <Text fontSize="24px" textAlign="left" color="black" fontFamily={quicksand.style.fontFamily}>
+                    Copy Rights &copy; {new Date().getFullYear()}.
                 </Text>
-                <Text fontSize="sm" textAlign="center" color="black" fontFamily={quicksand.style.fontFamily}>
+                <Text fontSize="sm" textAlign="left" color="black" fontFamily={quicksand.style.fontFamily}>
                     Design By Kotak
                 </Text>
-                <Text fontSize="sm" textAlign="center" color="black" fontFamily={quicksand.style.fontFamily}>
+                <Text fontSize="sm" textAlign="left" color="black" fontFamily={quicksand.style.fontFamily}>
                     www.devkoma.com
                 </Text>
             </Box>

@@ -16,20 +16,12 @@ const backIgm = () => {
               left="0"
               right="0"
               bottom="0"
-              backgroundImage="url('/images/Image(bg).png')"
+              backgroundImage="url('/images/Image(bbg).png')"
               backgroundSize="cover"
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              filter="blur(30px)" // Apply blur effect
-              opacity="0.5" // Lower the opacity of the image
-            />
-            <Box
-              position="absolute"
-              top="0"
-              left="0"
-              right="0"
-              bottom="0"
-              backgroundColor="rgba(255, 255, 255, 0.5)" // Optional: Add a white overlay with 50% opacity
+              filter="blur(1px)" // Apply blur effect
+              opacity="0.50" // Lower the opacity of the image
             />
           </Box>
           );
