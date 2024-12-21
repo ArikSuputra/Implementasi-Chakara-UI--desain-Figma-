@@ -8,7 +8,7 @@ const backIgm = () => {
       left="0"
       right="0"
       bottom="0"
-      zIndex="-1" // Place it behind all other content
+      zIndex="-3" // Place it behind all other content
     >
       <Box
         position="absolute"
@@ -22,6 +22,7 @@ const backIgm = () => {
         backgroundPosition="center"
         filter="blur(1px)" // Apply blur effect
         opacity="0.50" // Lower the opacity of the image
+        zIndex="-4"
       />
     </Box>
   );

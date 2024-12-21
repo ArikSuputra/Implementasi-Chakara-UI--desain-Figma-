@@ -18,7 +18,7 @@ export default function Home() {
       overflow="hidden"
     >
       {/* Background Image */}
-      <Box position="absolute" top="0" left="0" right="0" bottom="0" zIndex="-1">
+      <Box position="absolute" top="0" left="-45px" right="0" bottom="0" zIndex="-1">
         <Image 
           src="/images/BackGround.png"
           style={{ objectFit: "cover" }}
@@ -28,9 +28,9 @@ export default function Home() {
       </Box>
       <Box
         position="absolute"
-        bottom="30px"   // Distance from bottom
-        right="30px"     // Distance from left
-        zIndex="1"
+        bottom="50px"   // Distance from bottom
+        right="50px"     // Distance from left
+        zIndex="3"
         display={{ base: "none", lg: "flex" }} 
       >
         <CardBox />

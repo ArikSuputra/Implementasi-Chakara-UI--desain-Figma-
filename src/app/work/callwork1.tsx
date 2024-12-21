@@ -135,9 +135,9 @@ export default function CallWork() {
   const imageList = splitArray(filenames, columnSize); // Split images into columns based on screen size
 
   return (
-    <Flex direction="row" gap={4} pl="20px" pr="20px">
+    <Flex direction="row" gap="25px" p="25px">
       {imageList.map((column, colIndex) => (
-        <Flex direction="column" w="100%" key={colIndex} gap={4}>
+        <Flex direction="column" w="100%" key={colIndex} gap="25px">
           {column.map((filename, idx) => (
             <Box key={filename} position="relative">
               {/* Link to ExtendPage with filename in query */}
@@ -156,7 +156,7 @@ export default function CallWork() {
                 position="absolute"
                 top="10px"
                 left="10px"
-                bg="rgba(255, 255, 255, 0.8)"
+                bgColor="white"
                 p="3px 8px"
               >
                 <Text fontSize="sm" color="#562400">

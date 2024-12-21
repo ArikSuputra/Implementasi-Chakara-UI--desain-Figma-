@@ -15,8 +15,7 @@ const CardBox = () => {
   return (
     <Box
       bg="#E1D5CECC"
-      boxShadow="lg"
-      p={6}
+      p="30px"
       display="flex"
       flexDirection="column"
       gap={2}

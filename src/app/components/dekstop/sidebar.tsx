@@ -142,7 +142,7 @@ const Sidebar = () => {
         right: 0,
         bottom: 0,
         backgroundColor: "rgba(225, 213, 206, 0.70)", // Increase opacity here
-        zIndex: 0, // Layer below text but above image
+        zIndex: -1, // Layer below text but above image
       }}
       zIndex={1}
     >
