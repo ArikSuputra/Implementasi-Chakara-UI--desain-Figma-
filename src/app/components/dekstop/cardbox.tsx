@@ -32,7 +32,9 @@ const CardBox = () => {
       <Text fontFamily={quicksand.style.fontFamily}>
         See details 
       </Text>
+      <Flex pt="5px" pl="7px">
         <GoArrowRight/>
+      </Flex>
       </Flex>
     </Box>
   );

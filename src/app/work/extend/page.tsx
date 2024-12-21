@@ -102,11 +102,15 @@
 //     </>
 //   );
 // }
-
+import { Flex} from "@chakra-ui/react";
 import CallExtend from "./callextend";
 
 const ExtendPage = () => {
-  return <CallExtend />;
+  return (
+    <Flex pb={{ base: "100px", md: "0px", lg: "0px" }}>
+      <CallExtend />
+    </Flex>
+  );
 };
 
 export default ExtendPage;

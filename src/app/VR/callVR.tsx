@@ -15,7 +15,7 @@ export default function VR() {
   console.log("Filenames fetched in VR component:", filenames);
 
   return (
-    <Flex direction="column" wrap="wrap" justify="center" p={2}>
+    <Flex direction="column" wrap="wrap" justify="center" p={5}>
       <SimpleGrid columns={[1]} spacing="20px" width="100%" maxW="5000px">
         {filenames.map((filename: string) => {
           const imagePath = `/images/VR/${filename}`;

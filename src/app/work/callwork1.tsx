@@ -135,7 +135,7 @@ export default function CallWork() {
   const imageList = splitArray(filenames, columnSize); // Split images into columns based on screen size
 
   return (
-    <Flex direction="row" gap={4}>
+    <Flex direction="row" gap={4} pl="20px" pr="20px">
       {imageList.map((column, colIndex) => (
         <Flex direction="column" w="100%" key={colIndex} gap={4}>
           {column.map((filename, idx) => (
