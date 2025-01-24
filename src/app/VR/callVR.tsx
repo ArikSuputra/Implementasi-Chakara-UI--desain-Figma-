@@ -16,11 +16,10 @@ export default function VR() {
 
   return (
     <Flex direction="column" wrap="wrap" justify="center" p="25px">
-      <SimpleGrid columns={[1]} spacing="25px" width="100%" maxW="5000px">
+      <SimpleGrid spacingY="25px" width="100%" maxW="5000px">
         {filenames.map((filename: string) => {
           const imagePath = `/images/VR/${filename}`;
           console.log("Image path:", imagePath);
-
           return (
             <Box
               key={filename}

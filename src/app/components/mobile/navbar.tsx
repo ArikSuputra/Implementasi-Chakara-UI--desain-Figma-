@@ -23,7 +23,7 @@ const Navbar = () => {
       bottom="0"
       left="0"
       width="100%"
-      height="95px"
+      height="70px"
       _before={{
         content: '""',
         position: "absolute",
@@ -42,7 +42,8 @@ const Navbar = () => {
             href={route.path}
             key={route.name}
             width="100%"
-            padding="12px"
+            height="100%"
+            padding="1px"
             bg={currentPath === route.path ? "#562400" : "none"}
             display="Flex"
             justifyContent="center"

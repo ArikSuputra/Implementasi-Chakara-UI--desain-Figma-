@@ -198,7 +198,7 @@ const Sidebar = () => {
       </Box>
 
       {/* Sidebar Footer */}
-      <Box mt="auto" pt={4} borderTop="1px solid gray" zIndex={1}>
+      <Box mt="auto" pt={4} zIndex={1}>
         <Text
           fontSize="24px"
           textAlign="left"

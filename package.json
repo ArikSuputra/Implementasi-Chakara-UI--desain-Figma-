@@ -14,18 +14,24 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@next/font": "^14.2.15",
+    "@storybook/addon-actions": "^8.4.7",
+    "@storybook/addon-knobs": "^8.0.1",
     "framer-motion": "^11.5.4",
     "fs.promises": "^0.1.2",
     "next": "^14.2.20",
     "react": "^18",
     "react-dom": "^18",
     "react-icon": "^1.0.0",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "react-responsive-carousel": "^3.2.23",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-slick": "^0.23.13",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "typescript": "^5"
