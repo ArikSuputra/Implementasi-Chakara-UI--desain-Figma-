@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const CarouselComponent = () => {
   const images = [
-    "/images/gallery/immage1.png",
+    "/images/gallery/BackGround.png",
     "/images/gallery/immage2.png",
     "/images/gallery/immage3.png",
   ];
@@ -45,7 +45,7 @@ const CarouselComponent = () => {
       {/* Custom Dots */}
       <Box
         position="absolute"
-        bottom="20px"
+        bottom={{ base: "175px", lg: "30px" }}
         left="50%"
         transform="translateX(-50%)"
         display="flex"

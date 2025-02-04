@@ -15,13 +15,13 @@ const CardBox = () => {
   return (
     <Box
       bg="#E1D5CECC"
-      p="30px"
+      p="15px"
       width="100%"
       height="200"
       display="flex"
       flexDirection="column"
-      gap={2}
-      justifyContent="center"
+      gap={1}
+      justifyContent="top"
       alignItems="center"
     >
       <Heading size="md" color="black" fontFamily={dmSerifDisplay.style.fontFamily}>
